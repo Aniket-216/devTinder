@@ -33,17 +33,19 @@ const Connections = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center my-10">
-            <h1 className="text-bold text-2xl">Connections</h1>
-            {connections.map((connection) => (
-                <div
-                    key={connection._id}
-                    className="border border-base-300 rounded-lg p-5 my-5"
-                >
-                    <ConnectionCard connections={connection} />
-                </div>
-            ))}
-        </div>
+        connections && (
+            <div className="flex flex-col items-center justify-center my-10">
+                <h1 className="text-bold text-2xl">Connections</h1>
+                {connections.map((connection) => (
+                    <div
+                        key={connection._id}
+                        className="border border-base-300 rounded-lg p-5 my-5"
+                    >
+                        <ConnectionCard connections={connection} />
+                    </div>
+                ))}
+            </div>
+        )
     );
 };
 

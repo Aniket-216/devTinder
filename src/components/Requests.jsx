@@ -33,19 +33,21 @@ const Requests = () => {
         );
     }
     return (
-        <div className="flex flex-col items-center justify-center my-10">
-            <h1 className="text-bold text-2xl">Requests</h1>
-            {requests.map((request) => {
-                return (
-                    <div
-                        key={request._id}
-                        className="border border-base-300 rounded-lg p-5 my-5"
-                    >
-                        <RequestCard request={request} />
-                    </div>
-                );
-            })}
-        </div>
+        requests && (
+            <div className="flex flex-col items-center justify-center my-10">
+                <h1 className="text-bold text-2xl">Requests</h1>
+                {requests.map((request) => {
+                    return (
+                        <div
+                            key={request._id}
+                            className="border border-base-300 rounded-lg p-5 my-5"
+                        >
+                            <RequestCard request={request} />
+                        </div>
+                    );
+                })}
+            </div>
+        )
     );
 };
 
